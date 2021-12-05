@@ -17,7 +17,7 @@ size_t		ft_strlen(const char *str);
 size_t		ft_strlcpy(char *dst, const char *src, size_t len);
 size_t		ft_strlcat(char *dst, const char *src, size_t len);
 char		*ft_strchr(const char *str, int c);
-char		*ft_substr(char const *str, unsigned int start, size_t len);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 char		*ft_strdup(const char *str);
 char		*ft_strjoin(char const *s1, char const *s2);
