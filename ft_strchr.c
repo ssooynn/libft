@@ -6,7 +6,7 @@
 /*   By: sooylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:30:51 by sooylee           #+#    #+#             */
-/*   Updated: 2021/11/23 16:22:19 by sooylee          ###   ########.fr       */
+/*   Updated: 2021/12/07 16:15:55 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strchr(const char *str, int c)
 	}
 	if (s[i] == find)
 		return ((char *)s + i);
-i	return (0);
+	return (0);
 }

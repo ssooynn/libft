@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 23:19:46 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/07 16:13:21 by sooyeon          ###   ########.fr       */
+/*   Created: 2021/12/07 15:57:06 by sooyeon           #+#    #+#             */
+/*   Updated: 2021/12/07 15:57:07 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *ptr, int c, size_t num)
+int	ft_lstsize(t_list *lst)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	character;
+	int	n;
 
-	str = (unsigned char *)ptr;
-	character = (unsigned char *)c;
-	i = 0;
-	while (i < n)
+	n = 0;
+	while (lst)
 	{
-		if (*str == character)
-			return (str);
-		str++;
-		i++;
+		lst = lst->next;
+		n++;
 	}
-	return (NULL);
+	return (n);
 }
