@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 19:40:36 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/13 19:13:28 by sooyeon          ###   ########.fr       */
+/*   Created: 2021/12/13 18:15:54 by sooyeon           #+#    #+#             */
+/*   Updated: 2021/12/13 18:42:31 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t num)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*new_dst;
-	unsigned char	*new_src;
-	size_t			i;
+	void	*tmp;
 
-	if (!dst || !src)
+	tmp = malloc(size * count);
+	if (!tmp)
 		return (0);
-	new_dst = (unsigned char *)dst;
-	new_src = (unsigned char *)src;
-	i = 0;
-	while (i < num)
-	{
-		new_dst[i] = new_src[i];
-		i++;
-	}
-	return (dst);
+	ft_memset(tmp, 0, size * count);
+	return (tmp);
 }

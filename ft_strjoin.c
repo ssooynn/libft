@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 17:20:44 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/05 17:20:45 by sooyeon          ###   ########.fr       */
+/*   Created: 2021/12/13 17:24:10 by sooyeon           #+#    #+#             */
+/*   Updated: 2021/12/13 17:24:31 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	sindex1;
+	size_t	sindex2;
+	size_t	index;
+	size_t	strindex;
 	char	*str;
-	size_t	len1;
-	size_t	len2;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
-	if (!s1 || !s2 || !str)
+	sindex1 = ft_strlen(s1);
+	sindex2 = ft_strlen(s2);
+	index = 0;
+	strindex = 0;
+	str = (char *)malloc(sizeof(char) * (sindex1 + sindex2 + 1));
+	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1, len1 + 1);
-	ft_strlcat(str + (s1 + len1), s2, len2 + 1);
+	while (index < sindex1)
+		str[strindex++] = s1[index++];
+	index = 0;
+	while (index < sindex2)
+		str[strindex++] = s2[index++];
+	str[strindex] = '\0';
 	return (str);
 }

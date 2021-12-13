@@ -6,7 +6,7 @@
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:37:39 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/11/18 18:37:42 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/13 18:50:37 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void	*ft_memset(void *ptr, int value, size_t num)
 
 	new = ptr;
 	while (num > 0)
+	{
 		*new++ = value;
+		num--;
+	}
 	return (ptr);
 }

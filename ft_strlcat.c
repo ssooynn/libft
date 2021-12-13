@@ -6,7 +6,7 @@
 /*   By: sooylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:45:22 by sooylee           #+#    #+#             */
-/*   Updated: 2021/11/19 15:47:08 by sooylee          ###   ########.fr       */
+/*   Updated: 2021/12/13 16:55:57 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t len)
 	if (len < dst_len)
 		return (src_len + len);
 	dst = dst + dst_len;
-	ft_strlcpy(dst, src, n - dst_len);
+	ft_strlcpy(dst, src, len - dst_len);
 	return (src_len + dst_len);
 }

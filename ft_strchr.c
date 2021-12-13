@@ -6,7 +6,7 @@
 /*   By: sooylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:30:51 by sooylee           #+#    #+#             */
-/*   Updated: 2021/12/07 16:15:55 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/13 16:53:19 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ char	*ft_strchr(const char *str, int c)
 
 	find = (unsigned char)c;
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (s[i] == find)
-			return ((char *)s + i);
+		if (str[i] == find)
+			return ((char *)str + i);
 		i++;
 	}
-	if (s[i] == find)
-		return ((char *)s + i);
+	if (str[i] == find)
+		return ((char *)str + i);
 	return (0);
 }

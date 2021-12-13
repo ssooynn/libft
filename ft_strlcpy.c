@@ -6,7 +6,7 @@
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:34:00 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/11/18 18:34:03 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/13 16:56:31 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 		i++;
 	}
 	dst[i] = '\0';
-	return (ft_strlen(scr));
+	return (ft_strlen(src));
 }

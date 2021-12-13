@@ -6,7 +6,7 @@
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:56:52 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/07 15:56:53 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/12 21:17:34 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (new_list -> next)
 		new_list = new_list->next;
 	new_list->next = new;
-	*lst = new_list;
 }

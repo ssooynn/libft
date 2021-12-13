@@ -6,7 +6,7 @@
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:38:14 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/01 23:38:15 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/13 18:23:42 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sum;
-	int	sign;
-	int	found;
+	long long			sum;
+	long long			sign;
+	unsigned long long	found;
 
 	sum = 0;
 	sign = 1;

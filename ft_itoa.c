@@ -6,7 +6,7 @@
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:06:49 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/06 18:06:51 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/13 16:30:34 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	*ft_itoa(int n)
 	size_t	i;
 	char	*str;
 
+	i = 0;
 	length = get_length(n);
 	str = (char *)malloc(length + 1);
 	if (!str)
@@ -45,7 +46,7 @@ char	*ft_itoa(int n)
 	}
 	while (i < length)
 	{
-		result[i] = '0' + (n % 10);
+		str[i] = '0' + (n % 10);
 		n = n / 10;
 		i++;
 	}
