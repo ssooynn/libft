@@ -5,28 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 18:35:51 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/11/18 18:36:18 by sooyeon          ###   ########.fr       */
+/*   Created: 2021/12/14 14:55:21 by sooyeon           #+#    #+#             */
+/*   Updated: 2021/12/14 14:55:38 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t num)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*new_dst;
-	unsigned char	*new_src;
-	size_t			i;
+	size_t				i;
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-	if (!dst && !src)
-		return (0);
-	new_dst = (unsigned char *) dst;
-	new_src = (unsigned char *)src;
+	ptr = (unsigned char *)dst;
+	ptr2 = (unsigned char *)src;
 	i = 0;
-	while (i < num)
-	{
-		new_dst[i] = new_src++[i];
-		i++;
-	}
+	if (!ptr && !ptr2)
+		return (NULL);
+	if (ptr2 < ptr)
+		while (++i <= len)
+			ptr[len - i] = ptr2[len - i];
+	else
+		while (len-- > 0)
+			*(ptr++) = *(ptr2++);
 	return (dst);
 }

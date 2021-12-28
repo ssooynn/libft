@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 23:38:14 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/13 18:23:42 by sooyeon          ###   ########.fr       */
+/*   Created: 2021/12/14 15:38:13 by sooyeon           #+#    #+#             */
+/*   Updated: 2021/12/14 15:38:14 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 int	ft_atoi(const char *str)
 {
-	long long			sum;
-	long long			sign;
-	unsigned long long	found;
+	int			i;
+	int			sign;
+	long long	n;
 
-	sum = 0;
+	i = 0;
 	sign = 1;
-	found = 1;
-	while (*str == ' ' || (41 <= *str && *str <= 45))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && found)
+	n = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
+		sign *= -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		if ('0' <= *str && *str <= '9')
-			sum = sum * 10 + *str - '0';
+		if (n * sign > 2147483647)
+			return (-1);
+		else if (n * sign < -2147483648)
+			return (0);
 		else
-			found = 0;
-		str++;
+			n = n * 10 + (str[i] - '0');
+		i++;
 	}
-	return (sign * sum);
+	return (n * sign);
 }

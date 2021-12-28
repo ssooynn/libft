@@ -6,7 +6,7 @@
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:40:36 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/13 19:13:28 by sooyeon          ###   ########.fr       */
+/*   Updated: 2021/12/13 21:24:20 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t num)
 	unsigned char	*new_src;
 	size_t			i;
 
-	if (!dst || !src)
+	if (!dst && !src)
 		return (0);
 	new_dst = (unsigned char *)dst;
 	new_src = (unsigned char *)src;

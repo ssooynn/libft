@@ -5,23 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyeon <sooylee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 18:06:49 by sooyeon           #+#    #+#             */
-/*   Updated: 2021/12/13 16:30:34 by sooyeon          ###   ########.fr       */
+/*   Created: 2021/12/16 17:44:11 by sooyeon           #+#    #+#             */
+/*   Updated: 2021/12/16 17:48:24 by sooyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_length(int n)
+long long	ft_abs(int n)
 {
-	size_t	len;
+	long long	n2;
 
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n > 0)
+	n2 = n;
+	if (n < 0)
+		return (n2 * -1);
+	return (n2);
+}
+
+int	ft_intlen(int n)
+{
+	int			len;
+	long long	n2;
+
+	len = 1;
+	n2 = ft_abs(n);
+	while (n2 > 9)
 	{
-		n /= 10;
+		n2 /= 10;
 		len++;
 	}
 	return (len);
@@ -29,27 +39,28 @@ size_t	get_length(int n)
 
 char	*ft_itoa(int n)
 {
-	size_t	length;
-	size_t	i;
-	char	*str;
+	char		*str;
+	long long	n2;
+	int			i;
+	int			len;
 
-	i = 0;
-	length = get_length(n);
-	str = (char *)malloc(length + 1);
+	n2 = ft_abs(n);
+	i = 1;
+	len = ft_intlen(n);
+	if (n < 0)
+		len++;
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	if (n < 0)
-	{
 		str[0] = '-';
-		n = -n;
-		i++;
-	}
-	while (i < length)
+	while (i <= len)
 	{
-		str[i] = '0' + (n % 10);
-		n = n / 10;
+		if (str[len - i] != '-')
+			str[len - i] = (n2 % 10) + '0';
+		n2 /= 10;
 		i++;
 	}
-	str[length] = '\0';
+	str[len] = '\0';
 	return (str);
 }
